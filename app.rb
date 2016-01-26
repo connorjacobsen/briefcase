@@ -18,7 +18,7 @@ helpers Helpers
 configure do
   set :views, 'app/views'
 
-  set :assets_precompile, %w(application.js application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
+  set :assets_precompile, %w(application.js base.css *.png *.jpg *.svg *.eot *.ttf *.woff)
   # CSS minification
   set :assets_css_compressor, :sass
   # JavaScript minification
