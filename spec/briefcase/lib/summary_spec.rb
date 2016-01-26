@@ -1,6 +1,5 @@
 require File.expand_path '../../../spec_helper.rb', __FILE__
 require 'lib/summary'
-require 'pry'
 
 RSpec.describe Summary do
   let(:filename) { File.expand_path('spec/support/files/test_1.html') }
