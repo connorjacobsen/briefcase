@@ -3,10 +3,10 @@
 
 %div{id: 'briefs'}
   #html-summary
-    %h3 Page Summary
+    %h3 Summary of HTML Source Code Tags
     %ul
     - locals[:summary].each do |element, count|
-      %li{class: 'selectable', id: "#{element}-tag"}= "#{element}: #{count}"
+      %li{class: 'selectable pill', id: "#{element}-tag"}= "#{element}: #{count}"
 
   #html-source-container
     %h3 Source Code
