@@ -17,5 +17,5 @@ highlightElement = (el, tag) ->
 matchTag = (tag, html) ->
   result = false
   tags = [ "<#{tag}", "<#{tag}>", "<#{tag}/>", "<#{tag} />", "</#{tag}>"]
-  (result = true if t == html) for t in tags
+  (result = true if html.indexOf(t) > -1) for t in tags
   result
