@@ -1,0 +1,12 @@
+.container
+  = haml :search
+
+%div{id: 'briefs'}
+  #html-summary
+    %ul
+    - locals[:summary].each do |element, count|
+      %li= "#{element} :: #{count}"
+  #html-source-container
+    %code
+      %xmp
+        = locals[:body]

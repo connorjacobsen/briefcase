@@ -1,0 +1,79 @@
+body
+  background-color: #87CEEB
+  font-family: 'Roboto', sans-serif
+
+@mixin centerer
+  display: flex
+  justify-content: center
+  align-items: center
+
+.container
+  @include centerer
+
+
+.briefcase-title
+  font-size: 56
+  margin-bottom: 0
+  color: #555
+
+.briefcase-logo
+  float: left
+  height: 135px
+  width: 135px
+  margin-top: 8%
+  margin-right: 15px
+
+#title-container
+  padding: 0
+  margin: 0
+  width: 650px
+
+#title-bar
+  height: 65px
+
+#briefs
+  background-color: #fbfbfb
+  margin: auto
+  padding-bottom: 15px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  color: 000
+  width: 80%
+
+/* based on http://jsfiddle.net/RFcyG/9/ */
+.btn
+  display: inline-block
+  font-size: 1em
+  padding: 1.1em 1.1em
+  line-height: 1.333333333
+  font-weight: normal
+  background-color: #FF530D
+  border: 0.07143em solid #FF530D
+  border-radius: .2em
+  color: #fff
+  margin-left: -4
+  text-decoration: none
+
+.btn:hover
+  background-color: #FF6526
+  border-color: #FF6526
+  text-decoration: none
+  border-bottom-color: #E83014
+
+.form-input
+  color: #3c3c3c
+  font-family: Helvetica, Arial, sans-serif
+  font-weight: 500
+  font-size: 18px
+  border-radius: 0
+  line-height: 22px
+  background-color: #fbfbfb
+  padding: 13px 13px 16px 13px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  -ms-box-sizing: border-box
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  box-sizing: border-box
+  border: 3px solid rgba(0,0,0,0)
+  margin-right: 0
