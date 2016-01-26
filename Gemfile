@@ -4,6 +4,7 @@ ruby '2.3.0'
 gem 'coffee-script'
 gem 'haml'
 gem 'httparty'
+gem 'jquery-cdn', '1.10.2'
 gem 'mechanize'
 gem 'nokogiri'
 gem 'sass'
@@ -19,4 +20,8 @@ end
 
 group :development, :test do
   gem 'pry'
+end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery'
 end

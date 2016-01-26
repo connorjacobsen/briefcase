@@ -18,13 +18,21 @@ helpers Helpers
 configure do
   set :views, 'app/views'
 
+  set :assets_precompile, %w(application.js application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
   # CSS minification
   set :assets_css_compressor, :sass
   # JavaScript minification
   set :assets_js_compressor, :uglifier
-end
 
-register Sinatra::AssetPipeline
+  register Sinatra::AssetPipeline
+
+  # Actual Rails Assets integration, everything else is Sprockets
+   if defined?(RailsAssets)
+     RailsAssets.load_paths.each do |path|
+       settings.sprockets.append_path(path)
+     end
+   end
+end
 
 get '/' do
   render_template :index
