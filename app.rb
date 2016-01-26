@@ -41,9 +41,10 @@ end
 post '/brief' do
   page = Fetch.html_from(params[:search_url])
   html = page.read
-  summary = Summary.new(html).elements
+  summary = Summary.new(html)
 
-  render_template :brief, locals: { code: 200, body: html, summary: summary }
+  render_template :brief,
+    locals: { code: 200, body: summary.html, summary: summary.elements }
 end
 
 not_found do

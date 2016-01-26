@@ -3,10 +3,21 @@ $ ->
 
   $('.selectable').on 'click', ->
     tag = this.id.split('-tag')[0]
-    unless active == tag
-      $("##{active}-tag").removeClass 'active'
-      $(this).addClass 'active'
-      active = tag
+    $("##{tag}-tag").toggleClass 'active'
+    highlightTags(tag)
 
-      elements = $('#source-code').find(tag)
-      $(el).addClass 'highlight' for el in elements
+highlightTags = (tag) ->
+  tags = $('#source-code').find('.tag')
+  highlightElement(el, tag) for el in tags
+
+highlightElement = (el, tag) ->
+  openTag = "<#{tag}"
+  closeTag = "</#{tag}"
+  html = _.unescape(el.innerHTML)
+  $(el).toggleClass('highlight') if matchTag(tag, html)
+
+matchTag = (tag, html) ->
+  result = false
+  tags = [ "<#{tag}", "<#{tag}>", "<#{tag}/>", "<#{tag} />", "</#{tag}>"]
+  (result = true if t == html) for t in tags
+  result

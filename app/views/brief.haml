@@ -11,5 +11,7 @@
   #html-source-container
     %h3 Source Code
     #source-code
-      %xmp{class: 'prettyprint linenums'}
-        = locals[:body].lstrip
+      %xmp{class: 'prettyprint'}
+        = locals[:body].to_xhtml(indent: 2)
+
+%script{src: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'}

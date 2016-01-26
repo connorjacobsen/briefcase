@@ -6,7 +6,7 @@ class Summary
   attr_reader :html
 
   def initialize(html)
-    @html = Nokogiri::HTML(html)
+    @html = Nokogiri::HTML(html, &:noblanks)
   end
 
   def elements
