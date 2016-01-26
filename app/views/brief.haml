@@ -3,10 +3,13 @@
 
 %div{id: 'briefs'}
   #html-summary
+    %h3 Page Summary
     %ul
     - locals[:summary].each do |element, count|
-      %li= "#{element} :: #{count}"
+      %li{class: 'selectable', id: "#{element}-tag"}= "#{element}: #{count}"
+
   #html-source-container
-    %code
-      %xmp
-        = locals[:body]
+    %h3 Source Code
+    #source-code
+      %xmp{class: 'prettyprint linenums'}
+        = locals[:body].lstrip

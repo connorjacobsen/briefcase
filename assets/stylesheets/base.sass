@@ -1,6 +1,14 @@
 body
-  background-color: #87CEEB
+  background-color: #fff
   font-family: 'Roboto', sans-serif
+
+/* wrap HTML source code */
+xmp
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
 
 @mixin centerer
   display: flex
@@ -75,5 +83,30 @@ body
   -moz-border-radius: 3px
   -webkit-border-radius: 3px
   box-sizing: border-box
-  border: 3px solid rgba(0,0,0,0)
+  border: 2px solid rgba(0,0,0,0)
   margin-right: 0
+
+/* mostly borrowed from:
+ * https://css-tricks.com/snippets/css/glowing-blue-input-highlights/
+ */
+.search-input
+  -webkit-transition: all 0.30s ease-in-out
+  -moz-transition: all 0.30s ease-in-out
+  -ms-transition: all 0.30s ease-in-out
+  -o-transition: all 0.30s ease-in-out
+  &:focus
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1)
+    border: 2px solid rgba(81, 203, 238, 1)
+
+.selectable
+  color: #555
+  text-decoration: underline
+  &:hover
+    color: #FF6526
+    cursor: pointer
+
+.active
+  color: #FF6526
+
+.highlight
+  background-color: #F3F315
