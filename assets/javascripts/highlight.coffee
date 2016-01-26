@@ -11,8 +11,6 @@ highlightTags = (tag) ->
   highlightElement(el, tag) for el in tags
 
 highlightElement = (el, tag) ->
-  openTag = "<#{tag}"
-  closeTag = "</#{tag}"
   html = _.unescape(el.innerHTML)
   $(el).toggleClass('highlight') if matchTag(tag, html)
 

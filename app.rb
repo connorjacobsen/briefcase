@@ -39,12 +39,11 @@ get '/' do
 end
 
 post '/brief' do
-  page = Fetch.html_from(params[:search_url])
-  html = page.read
+  html = Fetch.html_from(params[:search_url]).read
   summary = Summary.new(html)
 
   render_template :brief,
-    locals: { code: 200, body: summary.html, summary: summary.elements }
+    locals: { body: summary.html, summary: summary.elements }
 end
 
 not_found do
